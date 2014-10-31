@@ -1,0 +1,52 @@
+template(name='sidebar')
+  #sidebar
+    nav#sidebarMenu.sidebar-menu.sidebar-menu-vertical.sidebar-menu-left.unselectable
+      .sidebar-content
+        .heading(data-toggle="modal", data-target="#newCollectionModal")
+          .fa.fa-bookmark-o
+          span Collection
+          .fa.fa-plus
+        ul.allList
+          li 
+            a(href='{{pathFor "dashboard"}}') Dashboard
+          li
+            a#addFolderToCollections.add-folder(href='#')
+              i.fa.fa-plus &nbsp;
+              .fa.fa-folder-o &nbsp; Folder
+        ul#sortableCollections
+          each Collections
+            if folder
+              li
+                ul.folder
+                  .fa.fa-folder-o.folder-icon  #{name} 
+                    .fa.fa-cog.collection-folder-settings
+                  if collectionsInFolder
+                    each collections
+                        li
+                          a(href='{{pathFor "collectionPage" _id=this.collectionId}}') #{collectionName}
+                  else
+                    li
+                      i (Empty Folder)
+            else
+              li
+                a(href='{{pathFor "collectionPage" _id=this.collectionId}}') #{collectionName}
+        ul
+          li
+            a(href='{{pathFor "collectionTrash"}}')
+              .fa.fa-trash-o 
+              | Trash
+
+    #newCollectionModal.modal.fade(tabindex='-1', role='dialog' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal')
+              span(aria-hidden='true') ×
+              span.sr-only Close
+            h4.modal-title Give your new notepad a name
+          .modal-body
+              input#collectionName.form-control(type='text', placeholder='Enter Name e.g. "Physics"')
+          .modal-footer
+            //-button.btn.btn-default(type='button', data-dismiss='modal') Close
+            img.loader(src='/ajax-loader.gif')
+            button.btn.btn-primary#newCollection(type='button') Create Collection

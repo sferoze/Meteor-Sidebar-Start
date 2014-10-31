@@ -1,0 +1,155 @@
+@import 'nib'
+
+#sidebar
+  // Menu Styles
+  .sidebar-menu
+    -webkit-transition all 0.3s ease
+    -moz-transition all 0.3s ease
+    transition all 0.3s ease
+    background-color rgba(167, 177, 199, 0.95)
+    position fixed
+    //border-right 1px solid #e7e7e7
+    border-top 1px solid #ccc
+    border-right 1px solid #ccc
+    border-radius 0px 10px 0 0 
+    overflow-x hidden
+    overflow-y hidden
+    .sidebar-content
+      text-align left
+      padding-top 10px
+      padding-left 18px
+      //overflow-y scroll
+      height 100%
+      overflow-x hidden
+      overflow-y scroll
+      margin-bottom 70px
+      word-wrap break-word
+      font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+      .heading
+        font-size 26px
+        color #ffffff
+        //text-shadow 2px 2px 2px rgba(255, 255, 255, 0.6)
+        // padding-left 20px
+        padding-bottom 10px
+        padding-top 20px
+        margin 0
+        font-weight 400
+        &:hover
+          //color #97C8E5
+          color #567283
+          text-decoration none
+          cursor pointer
+          .fa-plus
+            color #ffffff
+            text-decoration none
+            cursor pointer
+        .fa-plus
+          color #6C6C6C
+          font-size 17px
+          padding 2px 2px
+          margin-bottom 2px
+          vertical-align middle
+        .fa-folder-o
+          color #ffffff
+          font-size 22px
+          &:hover
+            color #000000
+      .allList
+        margin-bottom 10px
+        li
+          color #ffffff
+          a
+            color #ffffff
+        .add-folder
+          .fa
+            font-weight bold
+            font-size 16px
+          .fa-plus
+            font-weight normal
+      ul 
+        list-style-type none
+        padding-left 15px
+        padding-right 15px
+        color #ffffff
+        li 
+          color #ffffff
+          a
+            padding 5px 0px
+            cursor pointer
+            font-size 16px
+            color #ffffff
+            display block
+            text-decoration none
+            line-height 22px
+            font-weight bold
+            &:hover
+              color #567283
+              text-decoration none
+      .folder
+        margin 5px 0px
+        padding 5px 0px
+        padding-left 0px
+        cursor pointer
+        font-size 16px
+        line-height 22px
+        overflow hidden
+        &.open
+          li
+            display list-item
+        &:hover
+          .fa-cog
+            display inline
+        .fa
+          font-weight bold
+          color #ffffff
+          &:hover
+            color #567283
+        .fa-cog
+          display none
+          cursor pointer
+          color #ffffff
+          padding 0px 6px
+          &:hover
+            color #567283
+        li
+          padding-left 25px
+          display none
+      .sidebar-bottom-spacer
+        height 70px
+    &.sidebar-menu-vertical
+      width 250px
+      height 100%
+      top 60px
+      z-index 1000
+
+    &.sidebar-menu-left
+      //left -250px
+      transform translate3d(-250px, 0, 0)
+      -webkit-backface-visibility hidden
+      -webkit-perspective 1000
+      &.sidebar-menu-open
+        //left 0px
+        transform translate3d(0, 0, 0)
+        -webkit-backface-visibility hidden
+        -webkit-perspective 1000
+
+
+#newCollectionModal
+  .modal-footer
+    border-top none
+    .loader
+        display none
+        position fixed
+        left 49%
+        bottom 25px
+    #newCollection
+      width 100%
+  .modal-header
+    border-bottom none    
+
+
+// @media (max-width: 767px)
+//   #sidebar
+//     .cbp-spmenu-left
+//       left -250px
+

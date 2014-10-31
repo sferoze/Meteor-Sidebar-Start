@@ -1,0 +1,17 @@
+template(name='layout')
+  if currentUser
+    +sidebar
+  .container-fluid
+    +header
+    #main.row-fluid
+      +flashMessages
+      +yield
+    //-+composeMessageModal
+
+  
+template(name='layoutLoggedOut')
+  .container-fluid
+    +headerLoggedOut
+    #main.row-fluid
+      +flashMessages
+      +yield

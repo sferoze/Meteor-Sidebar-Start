@@ -1,0 +1,17 @@
+template(name="headerLoggedOut")
+  #header.navbar.navbar-default(role='navigation')
+    .container-fluid
+      .navbar-header
+        //-i.fa.fa-bars#toggleSidebarMenu
+        a.navbar-brand 
+          i.fa.fa-cloud
+        //- .info-icon 
+        //-   .fa.fa-cloud
+        a.pull-right.btn.btn-default.nav-toggle(data-toggle="collapse", data-target=".navbar-collapse")
+          i.glyphicon.glyphicon-chevron-down
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav.navbar-right.login-buttons
+          +loginButtons

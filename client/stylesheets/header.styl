@@ -1,0 +1,73 @@
+@import 'nib'
+
+#header
+  -webkit-transition all 300ms ease-out 
+  -moz-transition all 300ms ease-out 
+  -o-transition all 300ms ease-out 
+  transition all 300ms ease-out 
+  //background-color rgba(248,250,254,0.95)
+  //background-image url(/navbar_top.png)
+  //background-size 100%
+  //background-color rgba(255, 255, 255, .9)
+  background rgba(255, 255, 255, .9)
+  //background-color white
+  border 0px solid white
+  // bootstrap nav menu collapse button
+  .container-fluid
+    padding-top 5px
+  .info-icon
+    display block
+    float left
+    padding 10px 30px 
+    font-size 18px
+  .navbar-nav
+    background-color rgba(255, 255, 255, .9)
+  .navbar-header
+    background-color rgba(255, 255, 255, .9)
+    .navbar-brand
+      margin-left 10px
+      font-size 28px
+      &:hover 
+        cursor pointer
+  .nav-toggle
+    margin-right 20px
+    margin-top 5px
+    border none
+    background none
+    font-size 20px
+    display none
+  // Sidebar open button
+  .fa-bars
+    font-size 40px
+    padding-left 20px
+    padding-top 5px
+    float left
+    cursor pointer
+    &.active
+      color #97C8E5
+  .login-buttons
+    padding-right 12px
+
+@media (max-width: 767px)
+  #header
+    .navbar-collapse
+      background-color #F3F3F3
+      border-bottom 1px solid black
+      .navbar-nav
+        background-color #F3F3F3
+      .notifications-dropdown, .messages-dropdown
+        text-align center
+        ul
+          text-align center
+          .text
+            padding 5px 15px 5px 25px
+    .fa-bars
+      padding-left 34px
+      padding-top 5px
+    #login-dropdown-list
+      .dropdown-toggle 
+        text-align center
+      .dropdown-menu
+        margin 0px auto
+    .nav-toggle
+      display inline
